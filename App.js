@@ -17,7 +17,7 @@ export default function App() {
       <Tab.Navigator>
         <Tab.Screen
           name="What to eat?"
-          component={MealScreen}
+          component={TestScreen}
           options={{
             tabBarLabel: "Your Meal",
             tabBarIcon: ({ color, size }) => (
