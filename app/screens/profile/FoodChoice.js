@@ -21,7 +21,7 @@ const FoodChoice = _props => {
         return (
         <View style={styles.item}>
             <Text style={styles.textItem}>{item.label}</Text>
-            <Image style={styles.icon} source={require('../assets/favicon.png')} />
+            <Image style={styles.icon} source={require('../../assets/favicon.png')} />
         </View>
         );
     };

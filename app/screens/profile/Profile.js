@@ -34,7 +34,7 @@ function Profile(props) {
         return (
         <View style={styles.item}>
             <Text style={styles.textItem}>{item.label}</Text>
-            <Image style={styles.icon} source={require('../assets/favicon.png')} />
+            <Image style={styles.icon} source={require('../../assets/favicon.png')} />
         </View>
         );
     };
@@ -43,7 +43,7 @@ function Profile(props) {
     return (
         <View
             style = {styles.container}
-            source={require("../assets/background.jpg")}> 
+            source={require("../../assets/background.jpg")}> 
             <View style={styles.textWrapper}>
                 <Text style={styles.textIntextWrapper}>Food Choice</Text>
                 <Text style={[styles.textIntextWrapper,styles.arrow]} onPress={foodChoicePress}>></Text>
