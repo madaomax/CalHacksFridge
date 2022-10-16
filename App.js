@@ -8,6 +8,8 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import TestScreen from "./app/screens/TestScreen";
 import MealScreen from "./app/screens/meal/MealScreen";
 import FridgeScreen from "./app/screens/fridge/FridgeScreen";
+import FoodChoice from "./app/screens/profile/FoodChoice";
+import Profile from "./app/screens/profile/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +43,7 @@ export default function App() {
         />
         <Tab.Screen
           name="Profile"
-          component={TestScreen}
+          component={Profile}
           options={{
             tabBarLabel: "foodie profile",
             tabBarIcon: ({ color, size }) => (
