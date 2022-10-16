@@ -3,19 +3,20 @@ import {StyleSheet, View, Text, Image} from 'react-native';
 import {Dropdown, MultiSelect} from 'react-native-element-dropdown';
 
 const data = [
-    {label: 'Item 1', value: '1'},
-    {label: 'Item 2', value: '2'},
-    {label: 'Item 3', value: '3'},
-    {label: 'Item 4', value: '4'},
-    {label: 'Item 5', value: '5'},
-    {label: 'Item 6', value: '6'},
-    {label: 'Item 7', value: '7'},
-    {label: 'Item 8', value: '8'},
+    {label: 'Food 1', value: '1'},
+    {label: 'Food 2', value: '2'},
+    {label: 'Food 3', value: '3'},
+    {label: 'Food 4', value: '4'},
+    {label: 'Food 5', value: '5'},
+    {label: 'Food 6', value: '6'},
+    {label: 'Food 7', value: '7'},
+    {label: 'Food 8', value: '8'},
 ];
 
 const FoodChoice = _props => {
     const [dropdown, setDropdown] = useState(null);
-    const [selected, setSelected] = useState([]);
+    const [selectedWant, setSelectedWant] = useState([]);
+    const [selectedUnwant, setSelectedUnwant] = useState([]);
 
     const _renderItem = item => {
         return (
@@ -28,8 +29,25 @@ const FoodChoice = _props => {
 
     return (
         <View style={styles.container}>
+            <Text style={styles.title}>Food Choice</Text>
             <MultiSelect
-                style={styles.dropdown}
+                style={[styles.dropdown,styles.wanted]}
+                data={data}
+                labelField="label"
+                valueField="value"
+                label="Multi Select"
+                placeholder="Wanted Food"
+                search
+                searchPlaceholder="Search"
+                value={selectedWant}
+                onChange={item => {
+                setSelectedWant(item);
+                    console.log('selected', item);
+                }}
+                renderItem={item => _renderItem(item)}
+            />
+            <MultiSelect
+                style={[styles.dropdown,styles.unwanted]}
                 data={data}
                 labelField="label"
                 valueField="value"
@@ -37,9 +55,9 @@ const FoodChoice = _props => {
                 placeholder="Unwanted Food"
                 search
                 searchPlaceholder="Search"
-                value={selected}
+                value={selectedUnwant}
                 onChange={item => {
-                setSelected(item);
+                setSelectedUnwant(item);
                     console.log('selected', item);
                 }}
                 renderItem={item => _renderItem(item)}
@@ -53,14 +71,31 @@ export default FoodChoice;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: "rgba(176, 224, 230, 0.1)",
         padding: 40,
+    },
+    title:{
+        fontSize:40,
+        position:"absolute",
+        top:100,
+        left:50,
+        fontWeight:'bold'
+
     },
     dropdown: {
         backgroundColor: 'white',
         borderBottomColor: 'gray',
         borderBottomWidth: 0.5,
         marginTop: 20,
+        paddingLeft:10,
+        paddingRight:10,
+    },
+    unwanted:{
+        
+        marginTop:"20%",
+    },
+    wanted:{
+        marginTop:"50%",
     },
     icon: {
         marginRight: 5,

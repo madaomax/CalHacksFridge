@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     textWrapper: {
         marginTop:"5%",
         width: '85%',
-        height: "5%",
+        height: 50,
         backgroundColor: "#ec9a9a",
         paddingLeft:10,
         flexDirection:"row",
