@@ -10,6 +10,7 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { ProgressBar } from "react-native-paper";
 // import FridgeItem from './FridgeItem.js';
 
@@ -202,9 +203,10 @@ export default function Menu(props) {
             onPress={addNewItem}
             style={{ alignItems: "center" }}
           >
-            <Image
-              style={{ width: 20, height: 20 }}
-              source={require("./assets/AddButton.png")}
+            <MaterialCommunityIcons
+              name="plus-box-outline"
+              color={"black"}
+              size={30}
             />
           </TouchableOpacity>
         </View>
@@ -231,9 +233,10 @@ export default function Menu(props) {
                 <View style={styles.fifth_column}>
                   {item.showTrash && (
                     <TouchableOpacity onPress={() => cookItem(item)}>
-                      <Image
-                        style={{ width: 20, height: 20 }}
-                        source={require("./assets/AddButton.png")}
+                      <MaterialCommunityIcons
+                        name="plus-box-outline"
+                        color={"black"}
+                        size={30}
                       />
                     </TouchableOpacity>
                   )}
@@ -241,9 +244,10 @@ export default function Menu(props) {
                 <View style={styles.sixth_column}>
                   {item.showTrash && (
                     <TouchableOpacity onPress={() => deleteItem(item.id)}>
-                      <Image
-                        style={{ width: 20, height: 20 }}
-                        source={require("./assets/AddButton.png")}
+                      <MaterialCommunityIcons
+                        name="plus-box-outline"
+                        color={"black"}
+                        size={30}
                       />
                     </TouchableOpacity>
                   )}
@@ -255,9 +259,10 @@ export default function Menu(props) {
       </View>
 
       <TouchableOpacity onPress={showAddBox}>
-        <Image
-          style={{ width: 100, height: 100 }}
-          source={require("./assets/AddButton.png")}
+        <MaterialCommunityIcons
+          name="plus-box-outline"
+          color={"black"}
+          size={30}
         />
       </TouchableOpacity>
       <StatusBar style="auto" />
