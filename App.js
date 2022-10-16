@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 // Component imports
 import TestScreen from './app/screens/TestScreen';
@@ -12,25 +12,38 @@ import MealScreen from './app/screens/meal/MealScreen';
 const Tab = createBottomTabNavigator();
 
 
-// const Stack = createNativeStackNavigator();
-
 
 export default function App() {
   return (
-    // <NavigationContainer>
-    //   <Stack.Navigator initialRouteName="Meal">
-    //     <Stack.Screen
-    //       name="Meal"
-    //       component={MealScreen}
-    //       options={{ title: 'Eat!'}}
-    //     />
-    //     <Stack.Screen name="Test" component={TestScreen} />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
     <NavigationContainer>
       <Tab.Navigator>
-      <Tab.Screen name="Home" component={MealScreen} />
-      <Tab.Screen name="Test" component={TestScreen} />
+      <Tab.Screen 
+        name="Home" 
+        component={MealScreen} 
+        options={{ 
+          tabBarLabel: 'Your Meal',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="bread-slice" color={color} size={size} />
+          )
+          }} />
+      <Tab.Screen 
+        name="Fridge" 
+        component={TestScreen}
+        options={{ 
+          tabBarLabel: 'Your fridge',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="fridge" color={color} size={size} />
+          )
+           }} />
+      <Tab.Screen 
+        name="Profile" 
+        component={TestScreen}
+        options={{ 
+          tabBarLabel: 'foodie profile',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account" color={color} size={size} />
+          )
+           }} />
     </Tab.Navigator>
     </NavigationContainer>
     
