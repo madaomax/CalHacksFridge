@@ -44,6 +44,10 @@ function Profile(props) {
         <View
             style = {styles.container}
             source={require("../../assets/background.jpg")}> 
+            <View>
+                <Text style={styles.userName}>Hello, (UserName)</Text>
+
+            </View>
             <View style={styles.textWrapper}>
                 <Text style={styles.textIntextWrapper}>Food Choice</Text>
                 <Text style={[styles.textIntextWrapper,styles.arrow]} onPress={foodChoicePress}>></Text>
@@ -128,9 +132,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
-        justifyContent: "center",
+        top: "5%",
         alignItems:"center",
         //padding: "7.5%",
+    },
+    userName:{
+        fontSize:40,
+        fontWeight:"bold",
+        //top:"5%",
+
     },
     textWrapper: {
         marginTop:"5%",
