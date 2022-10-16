@@ -18,16 +18,16 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator>
       <Tab.Screen 
-        name="Home" 
+        name="What to eat?" 
         component={MealScreen} 
         options={{ 
           tabBarLabel: 'Your Meal',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bread-slice" color={color} size={size} />
+            <MaterialCommunityIcons name="noodles" color={color} size={size} />
           )
           }} />
       <Tab.Screen 
-        name="Fridge" 
+        name="Your Fridge" 
         component={TestScreen}
         options={{ 
           tabBarLabel: 'Your fridge',
@@ -41,7 +41,7 @@ export default function App() {
         options={{ 
           tabBarLabel: 'foodie profile',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+            <MaterialCommunityIcons name="emoticon-tongue" color={color} size={size} />
           )
            }} />
     </Tab.Navigator>
