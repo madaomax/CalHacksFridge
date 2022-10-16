@@ -1,12 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+// Component imports
 import TestScreen from './app/screens/TestScreen';
+import MealScreen from './app/screens/meal/MealScreen';
+
+
+const Stack = createNativeStackNavigator();
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Test</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Meal">
+        <Stack.Screen
+          name="Meal"
+          component={MealScreen}
+          options={{ title: 'Eat!'}}
+        />
+        <Stack.Screen name="Test" component={TestScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
