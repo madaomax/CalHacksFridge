@@ -45,7 +45,7 @@ function Profile(props) {
             style = {styles.container}
             source={require("../../assets/background.jpg")}> 
             <View>
-                <Text style={styles.userName}>Hello, (UserName)</Text>
+                <Text style={styles.username}>Hello, (Username)</Text>
 
             </View>
             <View style={styles.textWrapper}>
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         //padding: "7.5%",
     },
-    userName:{
+    username:{
         fontSize:40,
         fontWeight:"bold",
         //top:"5%",
