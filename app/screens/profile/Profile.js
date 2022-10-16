@@ -1,5 +1,4 @@
 import React from 'react';
-//import { NavigationContainer } from '@react-navigation/native';
 import { 
     StyleSheet, Text, View, SafeAreaView, 
     Image, TouchableWithoutFeedback, TouchableOpacity, 
@@ -64,7 +63,6 @@ function Profile(props) {
             </View>
             <View style={styles.textWrapper}>
                 <Text style={styles.textIntextWrapper}>Food Goal</Text>
-                {/* <Text style={[styles.textIntextWrapper,styles.arrow]} onPress={foodChoicePress}>Gym</Text> */}
                 <Dropdown
                     style={styles.dropdown}
                     containerStyle={styles.shadow}
@@ -80,9 +78,6 @@ function Profile(props) {
                     setDropdown(item.value);
                         console.log('selected', item);
                     }}
-                    // renderLeftIcon={() => (
-                    //     <Image style={styles.icon} source={require('./assets/account.png')} />
-                    // )}
                     renderItem={item => _renderItem(item)}
                     textError="Error"
                 />
@@ -102,23 +97,13 @@ function Profile(props) {
         
     );
 
-        
-
     function foodChoicePress(){
         console.log('food choice pressed')
         console.log(budget)
         console.log(location)
         console.log(dropdown)
     }
- 
-
-
-
-
-
-
 }
-
 
 const styles = StyleSheet.create({
     background: {
@@ -134,13 +119,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         top: "5%",
         alignItems:"center",
-        //padding: "7.5%",
     },
     username:{
         fontSize:40,
         fontWeight:"bold",
-        //top:"5%",
-
     },
     textWrapper: {
         marginTop:"5%",
@@ -150,11 +132,6 @@ const styles = StyleSheet.create({
         paddingLeft:10,
         flexDirection:"row",
 
-        // textAlign:"left",
-        // margin: 50,
-        // display:"flex",
-        // justifyContent:"flex-start",
-        // alignItems:"flex-start0"
     },
     textIntextWrapper:{
         color:"white",
@@ -162,16 +139,12 @@ const styles = StyleSheet.create({
         fontWeight:"bold",
     },
     arrow:{
-        //paddingLeft:"50%",
-        //width:"100%"
         position:"absolute",
         right:0,
         width:"30%",
         textAlign:"right",
         paddingRight:10
     },
-
-
     dropdown: {
         borderBottomColor: 'gray',
         backgroundColor: 'rgba(52, 52, 52, 0.1)',
@@ -213,7 +186,5 @@ const styles = StyleSheet.create({
         elevation: 2,
     },
 })
-
-
 
 export default Profile;
